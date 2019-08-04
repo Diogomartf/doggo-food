@@ -23,7 +23,7 @@ const Logo = styled.div`
   font-size: 28px;
   text-align: center;
 
-  color: ${({ theme }) => console.log(theme) || theme.colors.primary};
+  color: ${({ theme }) => theme.colors.primary};
 `;
 
 export default Nav;
