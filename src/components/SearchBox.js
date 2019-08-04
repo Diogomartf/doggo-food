@@ -2,52 +2,47 @@ import React from 'react';
 import styled from 'styled-components';
 import { Search } from 'react-feather';
 
-const SearchBox = () => (
+const SearchBox = ({ handleSubmit, handleChange, searchText }) => (
   <SearchBoxStyled>
-    <SearchInputBox>
-      <SearchIconStyled size={14} />
-      <InputStyled name="search" type="text" placeholder="Search Recipes.." />
-    </SearchInputBox>
+    <SearchInputForm onSubmit={handleSubmit}>
+      <SearchIconStyled size={18} />
+      <InputStyled
+        type="text"
+        placeholder="Search Recipes.."
+        value={searchText}
+        onChange={handleChange}
+      />
+    </SearchInputForm>
   </SearchBoxStyled>
 );
 
 const SearchBoxStyled = styled.div`
-  background: ${({ theme }) => theme.colors.lightGray};
   padding: 12px 24px;
+  background: ${({ theme }) => theme.colors.lightGray};
 `;
 
 const SearchIconStyled = styled(Search)`
-  color: ${({ theme }) => theme.colors.darkGray};
   margin-right: 12px;
+  color: ${({ theme }) => theme.colors.darkGray};
 `;
 
-const SearchInputBox = styled.form`
+const SearchInputForm = styled.form`
   display: flex;
-  height: 47px;
-  border-radius: 8px;
-  padding: 0 12px;
-  /* display: flex; */
   align-items: center;
+  height: 47px;
+  padding: 0 12px;
+  border-radius: 8px;
   background: ${({ theme }) => theme.colors.gray};
 `;
 
 const InputStyled = styled.input`
+  width: 100%;
+  border: none;
+  background: none;
   font-weight: 600;
   font-size: 14px;
-  /* background-color: transparent; */
-  border: 0px;
-  color:  ${({ theme }) => theme.colors.darkGray};
-  margin: 0px;
-  padding: 0px;
-  width: 100%;
-  text-overflow: ellipsis;
-  flex-grow: 1;
-  width: 100%;
-  background: none;
-  border: none;
-  /* height: 47px;
-  width: 100%;
-  background: ${({ theme }) => theme.colors.gray}; */
+  color: ${({ theme }) => theme.colors.darkGray};
+
   :focus {
     outline: none;
   }

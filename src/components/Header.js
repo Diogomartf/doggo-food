@@ -3,10 +3,14 @@ import React from 'react';
 import Nav from './Nav';
 import SearchBox from './SearchBox';
 
-const Header = () => (
+const Header = ({ handleSubmit, handleChange, searchText }) => (
   <div>
     <Nav />
-    <SearchBox />
+    <SearchBox
+      searchText={searchText}
+      handleSubmit={handleSubmit}
+      handleChange={handleChange}
+    />
   </div>
 );
 

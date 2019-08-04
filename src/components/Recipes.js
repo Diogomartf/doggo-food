@@ -53,9 +53,9 @@ const recipes = {
   ]
 };
 
-const Recipes = () => (
+const Recipes = ({ searchText }) => (
   <Container>
-    <Title>Recipes with Garlic</Title>
+    <Title>Recipes with {searchText}</Title>
     <Grid>
       {recipes.results.map(recipe => (
         <Recipe
