@@ -1,20 +1,37 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Recipe = ({ title, image, url, ingredients }) => (
-  <RecipeBox href={url}>
-    <ImageBackground src={image} />
-    <Content>
-      <Title>{title}</Title>
-    </Content>
-    <Ingredients>{ingredients}</Ingredients>
-  </RecipeBox>
-);
+const Recipe = ({ title, image, url, ingredients }) => {
+  const hasLactose =
+    ingredients.includes('cheese') || ingredients.includes('milk');
+  return (
+    <RecipeBox href={url}>
+      <ImageBackground src={image}>
+        {hasLactose && <Label>Lactose</Label>}
+      </ImageBackground>
+
+      <Content>
+        <Title>{title}</Title>
+      </Content>
+      <Ingredients>{ingredients}</Ingredients>
+    </RecipeBox>
+  );
+};
 
 const RecipeBox = styled.a`
   text-decoration: none;
   outline: none;
   cursor: pointer;
+`;
+
+const Label = styled.div`
+  position: absolute;
+  top: 20px;
+  right: 0;
+  background: ${props => props.theme.colors.primary};
+  color: ${props => props.theme.colors.white};
+
+  transform: rotate(45deg);
 `;
 
 const Content = styled.div`
@@ -39,6 +56,7 @@ const Title = styled.div`
 `;
 
 const ImageBackground = styled.div`
+  position: relative;
   width: 100%;
   height: 262px;
   background-image: url("${({ src }) => src}");
