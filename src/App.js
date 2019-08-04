@@ -1,12 +1,14 @@
 import React from 'react';
 import Header from './components/Header';
 import Recipes from './components/Recipes';
+import api from './api';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchText: ''
+      searchText: '',
+      recipes: []
     };
   }
 
@@ -16,8 +18,14 @@ class App extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
+    const { searchText } = this.state;
+    const hasMoreThan3Chars = searchText.length > 2;
 
-    if (this.state.searchText.length > 2) console.log('e.target', e.target);
+    if (hasMoreThan3Chars)
+      api.recipes
+        .list({ ingredients: searchText })
+        .then(response => this.setState({ recipes: response.data }))
+        .catch(response => console.log('error:', response));
   };
 
   render() {
@@ -29,7 +37,10 @@ class App extends React.Component {
           handleChange={this.handleChange}
           searchText={this.state.searchText}
         />
-        <Recipes searchText={this.state.searchText} />
+        <Recipes
+          recipes={this.state.recipes}
+          searchText={this.state.searchText}
+        />
       </div>
     );
   }
