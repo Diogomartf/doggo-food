@@ -24,7 +24,7 @@ class App extends React.Component {
     if (hasMoreThan3Chars)
       api.recipes
         .list({ ingredients: searchText })
-        .then(response => this.setState({ recipes: response.data }))
+        .then(response => this.setState({ recipes: response.data.results }))
         .catch(response => console.log('error:', response));
   };
 
