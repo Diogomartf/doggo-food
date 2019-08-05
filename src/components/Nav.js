@@ -25,5 +25,6 @@ const Logo = styled.div`
 
   color: ${({ theme }) => theme.colors.primary};
 `;
+Logo.displayName = 'Logo';
 
 export default Nav;
