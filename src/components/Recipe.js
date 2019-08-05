@@ -4,6 +4,7 @@ import styled from 'styled-components';
 const Recipe = ({ title, image, url, ingredients }) => {
   const hasLactose =
     ingredients.includes('cheese') || ingredients.includes('milk');
+
   return (
     <RecipeBox href={url}>
       <ImageBackground src={image}>
@@ -33,6 +34,7 @@ const Label = styled.div`
 
   transform: rotate(45deg);
 `;
+Label.displayName = 'Label';
 
 const Content = styled.div`
   margin-top: 12px;

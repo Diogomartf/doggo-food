@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Recipe/> should render correctly 1`] = `
+<styled.a
+  href="http://www.grouprecipes.com/77213/alfredo-sauce-weight-watchers.html"
+>
+  <styled.div
+    src="http://img.recipepuppy.com/306873.jpg"
+  />
+  <styled.div>
+    <styled.div>
+      Alfredo Recipe
+    </styled.div>
+  </styled.div>
+  <styled.div>
+    garlic, pesto, water
+  </styled.div>
+</styled.a>
+`;
