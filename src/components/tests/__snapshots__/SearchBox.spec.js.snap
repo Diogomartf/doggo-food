@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchBox should render correctly 1`] = `
+<styled.div>
+  <SearchInputForm
+    onSubmit={[MockFunction]}
+  >
+    <Styled(Search)
+      size={18}
+    />
+    <styled.input
+      onChange={[MockFunction]}
+      placeholder="Search Recipes.."
+      type="text"
+      value=""
+    />
+  </SearchInputForm>
+</styled.div>
+`;

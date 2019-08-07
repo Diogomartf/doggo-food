@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Recipe/> should render correctly 1`] = `
+<styled.div>
+  <styled.div>
+    Recipes with 
+    cheese
+  </styled.div>
+  <styled.div>
+    <Recipe
+      image="http://img.recipepuppy.com/306873.jpg"
+      ingredients="garlic, pesto, water"
+      key="http://www.grouprecipes.com/77213/alfredo-sauce-weight-watchers.html"
+      title="Alfredo Recipe"
+      url="http://www.grouprecipes.com/77213/alfredo-sauce-weight-watchers.html"
+    />
+    <Recipe
+      image="http://img.recipepuppy.com/683295.jpg"
+      ingredients="black pepper, butter, pasta (in general), milk, cheddar cheese, velveeta cheese"
+      key="http://www.recipezaar.com/Grandma-Sugars-Shell-Macaroni-and-Cheese-311887"
+      title="Grandma Sugar's Shell Macaroni and Cheese"
+      url="http://www.recipezaar.com/Grandma-Sugars-Shell-Macaroni-and-Cheese-311887"
+    />
+    <Recipe
+      image="http://img.recipepuppy.com/1947.jpg"
+      ingredients="ricotta cheese, black pepper, parmesan cheese, pasta (in general), eggs, mozzarella cheese"
+      key="http://allrecipes.com/Recipe/Cheese-Stuffed-Shells-in-Marinara-Sauce-2/Detail.aspx"
+      title="Cheese-Stuffed Shells in Marinara Sauce"
+      url="http://allrecipes.com/Recipe/Cheese-Stuffed-Shells-in-Marinara-Sauce-2/Detail.aspx"
+    />
+  </styled.div>
+</styled.div>
+`;
