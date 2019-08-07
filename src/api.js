@@ -8,7 +8,7 @@ export const axiosApi = axios.create({
     'Access-Control-Allow-Methods': 'GET'
   },
   baseURL:
-    'https://cors-anywhere.herokuapp.com/http://www.recipepuppy.com/api/?i=pesto'
+    'https://cors-anywhere.herokuapp.com/https://badi-recipes.now.sh/api/'
 });
 
 const api = {
