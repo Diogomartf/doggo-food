@@ -39,4 +39,6 @@ const Text = styled.div`
   color: ${({ theme }) => theme.colors.darkGray};
 `;
 
+EmptyState.displayName = 'EmptyState';
+
 export default EmptyState;

@@ -21,11 +21,6 @@ const SearchBoxStyled = styled.div`
   background: ${({ theme }) => theme.colors.lightGray};
 `;
 
-const SearchIconStyled = styled(Search)`
-  margin-right: 12px;
-  color: ${({ theme }) => theme.colors.darkGray};
-`;
-
 const SearchInputForm = styled.form`
   display: flex;
   align-items: center;
@@ -33,6 +28,13 @@ const SearchInputForm = styled.form`
   padding: 0 12px;
   border-radius: 8px;
   background: ${({ theme }) => theme.colors.gray};
+`;
+
+SearchInputForm.displayName = 'SearchInputForm';
+
+const SearchIconStyled = styled(Search)`
+  margin-right: 12px;
+  color: ${({ theme }) => theme.colors.darkGray};
 `;
 
 const InputStyled = styled.input`
