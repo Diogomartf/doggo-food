@@ -32,7 +32,6 @@ class App extends React.Component {
     return (
       <div>
         <Header
-          ref={this.searchInput}
           handleSubmit={this.handleSubmit}
           handleChange={this.handleChange}
           searchText={this.state.searchText}
