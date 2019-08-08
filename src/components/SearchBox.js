@@ -2,7 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import { Search } from 'react-feather';
 
-const SearchBox = ({ handleSubmit, handleChange, searchText }) => (
+const SearchBox = ({
+  handleSubmit,
+  handleChange,
+  searchText,
+  handleOnFocus,
+  handleOnBlur
+}) => (
   <SearchBoxStyled>
     <SearchInputForm onSubmit={handleSubmit}>
       <SearchIconStyled size={18} />
@@ -11,6 +17,8 @@ const SearchBox = ({ handleSubmit, handleChange, searchText }) => (
         placeholder="Search Recipes.."
         value={searchText}
         onChange={handleChange}
+        onFocus={handleOnFocus}
+        onBlur={handleOnBlur}
       />
     </SearchInputForm>
   </SearchBoxStyled>

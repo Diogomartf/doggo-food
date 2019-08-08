@@ -8,12 +8,22 @@ class App extends React.Component {
     super(props);
     this.state = {
       searchText: '',
-      recipes: []
+      recipes: [],
+      recentSearches: ['pesto', 'cheese', 'pasta', 'basil'],
+      inputFocus: false
     };
   }
 
   handleChange = e => {
     this.setState({ searchText: e.target.value });
+  };
+
+  handleOnFocus = () => {
+    this.setState({ inputFocus: true });
+  };
+
+  handleOnBlur = () => {
+    this.setState({ inputFocus: false });
   };
 
   handleSubmit = e => {
@@ -29,12 +39,18 @@ class App extends React.Component {
   };
 
   render() {
+    const { inputFocus, recentSearches } = this.state;
+
     return (
       <div>
         <Header
           handleSubmit={this.handleSubmit}
           handleChange={this.handleChange}
           searchText={this.state.searchText}
+          handleOnFocus={this.handleOnFocus}
+          handleOnBlur={this.handleOnBlur}
+          inputFocus={inputFocus}
+          recentSearches={recentSearches}
         />
         <Recipes
           recipes={this.state.recipes}
