@@ -9,13 +9,13 @@ class App extends React.Component {
     this.state = {
       searchText: '',
       recipes: [],
-      recentSearches: ['pesto', 'cheese', 'pasta', 'basil'],
+      recentSearches: [],
       inputFocus: false
     };
   }
 
-  handleChange = e => {
-    this.setState({ searchText: e.target.value });
+  handleChange = search => {
+    this.setState({ searchText: search });
   };
 
   handleOnFocus = () => {
@@ -28,14 +28,44 @@ class App extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    const { searchText } = this.state;
+    const { searchText, recentSearches } = this.state;
     const hasMoreThan3Chars = searchText.length > 2;
+
+    const updatedRecentSearches =
+      recentSearches.length >= 5
+        ? recentSearches.splice(1, 4).concat(searchText)
+        : recentSearches.concat(searchText);
 
     if (hasMoreThan3Chars)
       api.recipes
         .list({ ingredients: searchText })
-        .then(response => this.setState({ recipes: response.data.results }))
+        .then(response =>
+          this.setState({
+            recipes: response.data.results,
+            recentSearches: updatedRecentSearches
+          })
+        )
         .catch(response => console.log('error:', response));
+  };
+
+  onClickRecentSearch = search => {
+    api.recipes
+      .list({ ingredients: search })
+      .then(response =>
+        this.setState({
+          recipes: response.data.results,
+          searchText: search,
+          inputFocus: false
+        })
+      )
+      .catch(response => console.log('error:', response));
+  };
+
+  deleteRecentSearch = index => {
+    const { recentSearches } = this.state;
+    recentSearches.splice(index, 1);
+
+    this.setState({ recentSearches: recentSearches });
   };
 
   render() {
@@ -44,13 +74,15 @@ class App extends React.Component {
     return (
       <div>
         <Header
+          inputFocus={inputFocus}
+          recentSearches={recentSearches}
           handleSubmit={this.handleSubmit}
           handleChange={this.handleChange}
           searchText={this.state.searchText}
           handleOnFocus={this.handleOnFocus}
           handleOnBlur={this.handleOnBlur}
-          inputFocus={inputFocus}
-          recentSearches={recentSearches}
+          deleteRecentSearch={this.deleteRecentSearch}
+          onClickRecentSearch={this.onClickRecentSearch}
         />
         <Recipes
           recipes={this.state.recipes}

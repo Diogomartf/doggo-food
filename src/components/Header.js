@@ -12,7 +12,9 @@ const Header = ({
   inputFocus,
   handleOnFocus,
   handleOnBlur,
-  recentSearches
+  recentSearches,
+  deleteRecentSearch,
+  onClickRecentSearch
 }) => (
   <div>
     <Nav />
@@ -24,7 +26,13 @@ const Header = ({
         handleOnFocus={handleOnFocus}
         handleOnBlur={handleOnBlur}
       />
-      {inputFocus && <RecentSearches searches={recentSearches} />}
+      {inputFocus && (
+        <RecentSearches
+          searches={recentSearches}
+          deleteRecentSearch={deleteRecentSearch}
+          onClick={onClickRecentSearch}
+        />
+      )}
     </Relative>
   </div>
 );
