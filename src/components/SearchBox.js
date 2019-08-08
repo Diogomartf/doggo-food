@@ -16,9 +16,9 @@ const SearchBox = ({
         type="text"
         placeholder="Search Recipes.."
         value={searchText}
-        onChange={handleChange}
+        onChange={e => handleChange(e.target.value)}
         onFocus={handleOnFocus}
-        onBlur={handleOnBlur}
+        // onBlur={handleOnBlur}
       />
     </SearchInputForm>
   </SearchBoxStyled>
