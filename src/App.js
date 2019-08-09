@@ -9,8 +9,7 @@ class App extends React.Component {
     this.state = {
       searchText: '',
       recipes: [],
-      recentSearches: [],
-      inputFocus: false
+      recentSearches: []
     };
   }
 
@@ -61,18 +60,15 @@ class App extends React.Component {
   };
 
   render() {
-    const { inputFocus, recentSearches } = this.state;
+    const { recentSearches } = this.state;
 
     return (
       <div>
         <Header
-          inputFocus={inputFocus}
           recentSearches={recentSearches}
           handleSubmit={this.handleSubmit}
           handleChange={this.handleChange}
           searchText={this.state.searchText}
-          handleOnFocus={this.handleOnFocus}
-          handleOnBlur={this.handleOnBlur}
           deleteRecentSearch={this.deleteRecentSearch}
           onClickRecentSearch={this.onClickRecentSearch}
         />
@@ -84,5 +80,4 @@ class App extends React.Component {
     );
   }
 }
-
 export default App;
