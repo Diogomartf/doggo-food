@@ -3,10 +3,17 @@
 exports[`<Header/> should render correctly 1`] = `
 <div>
   <Nav />
-  <SearchBox
-    handleChange={[MockFunction]}
-    handleSubmit={[MockFunction]}
-    searchText=""
-  />
+  <styled.div>
+    <SearchBox
+      handleChange={[MockFunction]}
+      handleSubmit={[MockFunction]}
+      searchText=""
+    />
+    <RecentSearches
+      deleteRecentSearch={[MockFunction]}
+      onClick={[MockFunction]}
+      searches={Array []}
+    />
+  </styled.div>
 </div>
 `;
