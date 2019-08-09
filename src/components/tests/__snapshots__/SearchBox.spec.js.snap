@@ -8,8 +8,8 @@ exports[`SearchBox should render correctly 1`] = `
     <Styled(Search)
       size={18}
     />
-    <styled.input
-      onChange={[MockFunction]}
+    <InputStyled
+      onChange={[Function]}
       placeholder="Search Recipes.."
       type="text"
       value=""

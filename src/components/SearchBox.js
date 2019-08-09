@@ -50,6 +50,7 @@ const InputStyled = styled.input`
     outline: none;
   }
 `;
+InputStyled.displayName = 'InputStyled';
 
 SearchBox.propTypes = {
   searchText: PropTypes.string.isRequired,

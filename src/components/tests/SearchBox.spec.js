@@ -20,6 +20,29 @@ describe('SearchBox', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it('handleChange is called with correct data', async () => {
+    const handleSubmitMock = jest.fn();
+    const handleChangeMock = jest.fn();
+    const mockEvent = {
+      target: {
+        value: 'pesto'
+      }
+    };
+
+    const wrapper = mount(
+      <ThemeProvider theme={theme}>
+        <SearchBox
+          handleSubmit={handleSubmitMock}
+          handleChange={handleChangeMock}
+          searchText={''}
+        />
+      </ThemeProvider>
+    );
+
+    wrapper.find('InputStyled').simulate('change', mockEvent);
+    expect(handleChangeMock).toBeCalledWith('pesto');
+  });
+
   it('handleSubmit is called with correct data', async () => {
     const handleSubmitMock = jest.fn();
     const handleChangeMock = jest.fn();
