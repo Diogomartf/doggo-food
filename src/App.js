@@ -17,15 +17,20 @@ class App extends React.Component {
     this.setState({ searchText: search });
   };
 
+  updateRecentSearches = (recentSearches, searchText) =>
+    recentSearches.length >= 5
+      ? recentSearches.splice(1, 4).concat(searchText)
+      : recentSearches.concat(searchText);
+
   handleSubmit = e => {
     e.preventDefault();
     const { searchText, recentSearches } = this.state;
     const hasMoreThan3Chars = searchText.length > 2;
 
-    const updatedRecentSearches =
-      recentSearches.length >= 5
-        ? recentSearches.splice(1, 4).concat(searchText)
-        : recentSearches.concat(searchText);
+    const updatedRecentSearches = this.updateRecentSearches(
+      recentSearches,
+      searchText
+    );
 
     if (hasMoreThan3Chars)
       api.recipes

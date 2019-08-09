@@ -1,9 +1,7 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
-import { ThemeProvider } from 'styled-components';
-import theme from './styles';
-import api from './api';
+import { shallow } from 'enzyme';
 
+import api from './api';
 import App from './App';
 
 const mockData = {
@@ -48,16 +46,6 @@ describe('<App/>', () => {
   it('should render correctly', () => {
     expect(wrapper).toMatchSnapshot();
   });
-
-  // it('should mount correctly', () => {
-  //   wrapper = mount(
-  //     <ThemeProvider theme={theme}>
-  //       <App />
-  //     </ThemeProvider>
-  //   );
-
-  //   expect(wrapper).toMatchSnapshot();
-  // });
 
   it('handleChange should change state', () => {
     wrapper.instance().handleChange('pizza');
