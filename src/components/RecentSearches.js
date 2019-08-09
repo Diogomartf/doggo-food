@@ -81,6 +81,8 @@ const CloseIcon = styled(X)`
   color: ${props => props.theme.colors.darkGray};
 `;
 
+CloseIcon.displayName = 'CloseIcon';
+
 const SearchItem = styled.div`
   display: flex;
   justify-content: space-between;
@@ -97,6 +99,7 @@ const SearchItem = styled.div`
     border-radius: 4px;
   }
 `;
+SearchItem.displayName = 'SearchItem';
 
 RecentSearches.propTypes = {
   searches: PropTypes.arrayOf(PropTypes.string).isRequired,

@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { mount } from 'enzyme';
 import { ThemeProvider } from 'styled-components';
 import theme from '../../styles';
 
@@ -46,6 +46,30 @@ describe('<RecentSearches/>', () => {
       </ThemeProvider>
     );
     wrapper.find('CollapseWrapper').simulate('click');
+    expect(wrapper.find('Box')).toHaveLength(1);
+  });
+
+  it('should have Searchitem and CloseIcon with onClick', () => {
+    const wrapper = mount(
+      <ThemeProvider theme={theme}>
+        <RecentSearches
+          searches={['pesto', 'pizza']}
+          deleteRecentSearch={deleteRecentSearchMock}
+          onClick={onClickRecentSearchMock}
+        />
+      </ThemeProvider>
+    );
+    wrapper.find('CollapseWrapper').simulate('click');
+
+    wrapper
+      .find('CloseIcon')
+      .first()
+      .simulate('click');
+    wrapper
+      .find('SearchItem')
+      .last()
+      .simulate('click');
+
     expect(wrapper.find('Box')).toHaveLength(1);
   });
 });
