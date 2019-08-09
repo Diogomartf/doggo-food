@@ -1,0 +1,221 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RecentSearches/> should render correctly 1`] = `
+<ThemeProvider
+  theme={
+    Object {
+      "colors": Object {
+        "black": "#2B2B2B",
+        "darkGray": "#626262",
+        "gray": "#EAEAEA",
+        "lightGray": "#F4F4F4",
+        "primary": "#6056F5",
+        "red": "#CF0A2C",
+        "white": "#FFFFFF",
+        "yellow": "#FBB03B",
+      },
+      "name": "default theme",
+    }
+  }
+>
+  <RecentSearches
+    deleteRecentSearch={[MockFunction]}
+    onClick={[MockFunction]}
+    searches={
+      Array [
+        "pesto",
+        "cheese",
+      ]
+    }
+  >
+    <SearchWrapper>
+      <StyledComponent
+        forwardedComponent={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-bdVaJa",
+              "isStatic": false,
+              "lastClassName": "mpKfW",
+              "rules": Array [
+                "
+  width: 100%;
+  background-color: ",
+                [Function],
+                ";
+",
+              ],
+            },
+            "displayName": "SearchWrapper",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "styledComponentId": "sc-bdVaJa",
+            "target": "div",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
+      >
+        <div
+          className="sc-bdVaJa mpKfW"
+        >
+          <styled.div>
+            <StyledComponent
+              forwardedComponent={
+                Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "sc-bwzfXH",
+                    "isStatic": true,
+                    "lastClassName": "hYVoYR",
+                    "rules": Array [
+                      "
+  padding: 0 24px 12px 24px;
+",
+                    ],
+                  },
+                  "displayName": "styled.div",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "sc-bwzfXH",
+                  "target": "div",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                }
+              }
+              forwardedRef={null}
+            >
+              <div
+                className="sc-bwzfXH hYVoYR"
+              >
+                <CollapseWrapper
+                  onClick={[Function]}
+                >
+                  <StyledComponent
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "sc-htpNat",
+                          "isStatic": true,
+                          "lastClassName": "emitFB",
+                          "rules": Array [
+                            "
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  cursor: pointer;
+",
+                          ],
+                        },
+                        "displayName": "CollapseWrapper",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "sc-htpNat",
+                        "target": "div",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="sc-htpNat emitFB"
+                      onClick={[Function]}
+                    >
+                      <Menu
+                        color="currentColor"
+                        size={13}
+                      >
+                        <svg
+                          fill="none"
+                          height={13}
+                          stroke="currentColor"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          viewBox="0 0 24 24"
+                          width={13}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <line
+                            x1="3"
+                            x2="21"
+                            y1="12"
+                            y2="12"
+                          />
+                          <line
+                            x1="3"
+                            x2="21"
+                            y1="6"
+                            y2="6"
+                          />
+                          <line
+                            x1="3"
+                            x2="21"
+                            y1="18"
+                            y2="18"
+                          />
+                        </svg>
+                      </Menu>
+                      <styled.div>
+                        <StyledComponent
+                          forwardedComponent={
+                            Object {
+                              "$$typeof": Symbol(react.forward_ref),
+                              "attrs": Array [],
+                              "componentStyle": ComponentStyle {
+                                "componentId": "sc-bxivhb",
+                                "isStatic": false,
+                                "lastClassName": "iLjUPw",
+                                "rules": Array [
+                                  "
+  margin-left: 4px;
+  color: ",
+                                  [Function],
+                                  ";
+  text-transform: uppercase;
+  font-size: 12px;
+",
+                                ],
+                              },
+                              "displayName": "styled.div",
+                              "foldedComponentIds": Array [],
+                              "render": [Function],
+                              "styledComponentId": "sc-bxivhb",
+                              "target": "div",
+                              "toString": [Function],
+                              "warnTooManyClasses": [Function],
+                              "withComponent": [Function],
+                            }
+                          }
+                          forwardedRef={null}
+                        >
+                          <div
+                            className="sc-bxivhb iLjUPw"
+                          >
+                            Recent searches
+                          </div>
+                        </StyledComponent>
+                      </styled.div>
+                    </div>
+                  </StyledComponent>
+                </CollapseWrapper>
+              </div>
+            </StyledComponent>
+          </styled.div>
+        </div>
+      </StyledComponent>
+    </SearchWrapper>
+  </RecentSearches>
+</ThemeProvider>
+`;

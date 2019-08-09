@@ -46,6 +46,7 @@ const SearchWrapper = styled.div`
   width: 100%;
   background-color: ${props => props.theme.colors.lightGray};
 `;
+SearchWrapper.displayName = 'SearchWrapper';
 
 const Container = styled.div`
   padding: 0 24px 12px 24px;
@@ -58,6 +59,8 @@ const CollapseWrapper = styled.div`
   width: 100%;
   cursor: pointer;
 `;
+
+CollapseWrapper.displayName = 'CollapseWrapper';
 
 const CollapseTitle = styled.div`
   margin-left: 4px;
@@ -72,6 +75,7 @@ const Box = styled.div`
   z-index: 1;
   background-color: ${props => props.theme.colors.lightGray};
 `;
+Box.displayName = 'Box';
 
 const CloseIcon = styled(X)`
   color: ${props => props.theme.colors.darkGray};
