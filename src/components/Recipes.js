@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Recipe from './Recipe';
 import EmptyState from './EmptyState';
@@ -53,5 +54,17 @@ const Title = styled.div`
   line-height: 26px;
   color: ${({ theme }) => theme.colors.black};
 `;
+
+Recipes.propTypes = {
+  searchText: PropTypes.string.isRequired,
+  recipes: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      thumbnail: PropTypes.string.isRequired,
+      href: PropTypes.string.isRequired,
+      ingredients: PropTypes.string.isRequired
+    })
+  )
+};
 
 export default Recipes;

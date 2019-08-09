@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { X, Menu } from 'react-feather';
 
@@ -92,5 +93,11 @@ const SearchItem = styled.div`
     border-radius: 4px;
   }
 `;
+
+RecentSearches.propTypes = {
+  searches: PropTypes.arrayOf(PropTypes.string).isRequired,
+  deleteRecentSearch: PropTypes.func.isRequired,
+  onClick: PropTypes.func.isRequired
+};
 
 export default RecentSearches;

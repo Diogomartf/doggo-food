@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Recipe = ({ title, image, url, ingredients }) => {
@@ -68,5 +69,12 @@ const ImageBackground = styled.div`
   background-position: 50% 50%;
   background-repeat: no-repeat;
 `;
+
+Recipe.propTypes = {
+  title: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+  ingredients: PropTypes.string.isRequired
+};
 
 export default Recipe;

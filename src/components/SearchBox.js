@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Search } from 'react-feather';
 
@@ -49,5 +50,11 @@ const InputStyled = styled.input`
     outline: none;
   }
 `;
+
+SearchBox.propTypes = {
+  searchText: PropTypes.string.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired
+};
 
 export default SearchBox;
