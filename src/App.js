@@ -18,14 +18,6 @@ class App extends React.Component {
     this.setState({ searchText: search });
   };
 
-  handleOnFocus = () => {
-    this.setState({ inputFocus: true });
-  };
-
-  handleOnBlur = () => {
-    this.setState({ inputFocus: false });
-  };
-
   handleSubmit = e => {
     e.preventDefault();
     const { searchText, recentSearches } = this.state;

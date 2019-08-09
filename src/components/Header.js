@@ -9,9 +9,6 @@ const Header = ({
   handleSubmit,
   handleChange,
   searchText,
-  inputFocus,
-  handleOnFocus,
-  handleOnBlur,
   recentSearches,
   deleteRecentSearch,
   onClickRecentSearch
@@ -23,16 +20,12 @@ const Header = ({
         searchText={searchText}
         handleSubmit={handleSubmit}
         handleChange={handleChange}
-        handleOnFocus={handleOnFocus}
-        handleOnBlur={handleOnBlur}
       />
-      {inputFocus && (
-        <RecentSearches
-          searches={recentSearches}
-          deleteRecentSearch={deleteRecentSearch}
-          onClick={onClickRecentSearch}
-        />
-      )}
+      <RecentSearches
+        searches={recentSearches}
+        deleteRecentSearch={deleteRecentSearch}
+        onClick={onClickRecentSearch}
+      />
     </Relative>
   </div>
 );
